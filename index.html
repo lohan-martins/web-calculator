@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora Web</title>
+
+    <!-- Style -->
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <!-- Google icones-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=backspace"
+      rel="stylesheet"
+    />
+
+    <!-- Google fontes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mada:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div class="calculator">
+        <input
+          class="display"
+          type="text"
+          aria-label="Display da calculadora"
+          placeholder="0"
+          size="1"
+        />
+
+        <div class="keys">
+          <button class="key key-clear" type="button" value="c">C</button>
+          <button class="key" type="button" value="×">×</button>
+          <button class="key" type="button" value="÷">÷</button>
+          <button class="key" type="button" value="7">7</button>
+          <button class="key" type="button" value="8">8</button>
+          <button class="key" type="button" value="9">9</button>
+          <button class="key" type="button" value="-">-</button>
+          <button class="key" type="button" value="4">4</button>
+          <button class="key" type="button" value="5">5</button>
+          <button class="key" type="button" value="6">6</button>
+          <button class="key" type="button" value="+">+</button>
+          <button class="key" type="button" value="1">1</button>
+          <button class="key" type="button" value="2">2</button>
+          <button class="key" type="button" value="3">3</button>
+          <button class="key key-equals" type="button" value="=">=</button>
+          <button class="key" type="button" value="0">0</button>
+          <button class="key key-comma" type="button" value=",">,</button>
+          <button class="key key-backspace" type="button" value="backspace">
+            <span class="material-symbols-outlined">backspace</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/main.js" type="module"></script>
+  </body>
+</html>
