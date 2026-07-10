@@ -22,7 +22,7 @@ function evaluate(node) {
 
 const operators = {
   "+": (a, b) => a + b,
-  "-": (a, b) => a - b,
+  "-": calculateSubtraction,
   "*": (a, b) => a * b,
   "/": (a, b) => {
     if (b === 0) throw new Error("Divisão por zero");
@@ -31,7 +31,22 @@ const operators = {
 };
 
 function applyOperator(operator, left, right) {
-  return operators[operator](left, right);
+  const result = operators[operator](left, right);
+  return normalize(result);
+}
+
+function calculateSubtraction(a, b) {
+  const precision = Math.max(getSizeDecimal(a), getSizeDecimal(b));
+
+  return (a - b).toFixed(precision);
+}
+
+function getSizeDecimal(n) {
+  return n.toString().split(".")[1]?.length ?? 0;
+}
+
+function normalize(value) {
+  return Number(value);
 }
 
 export default evaluate;

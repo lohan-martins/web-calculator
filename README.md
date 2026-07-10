@@ -15,6 +15,10 @@ Uma **calculadora web** desenvolvida com **HTML**, **CSS** e **JavaScript**, cap
 
 Este projeto foi desenvolvido com o objetivo de praticar **desenvolvimento web** utilizando **HTML**, **CSS** e **JavaScript**. Além da construção da interface, o foco foi implementar toda a lógica da calculadora manualmente, reforçando conceitos de manipulação do **DOM**, **eventos** e **processamento de expressões matemáticas**.
 
+## Demonstração
+
+Acesse a aplicação online: https://lohan-martins.github.io/web-calculator/
+
 ## Pré-visualização
 
 ![Exemplo da Calculadora](./docs/images/calculator-preview.png)

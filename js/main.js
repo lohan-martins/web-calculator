@@ -209,9 +209,10 @@ function processResult() {
     const tokens = tokenize(expression);
     const parser = new Parser(tokens);
     const ast = parser.parseExpression();
-    const result = replacePeriodToComma(evaluate(ast));
+    const result = evaluate(ast);
+    const convertedResult = replacePeriodToComma(result);
 
-    updateDisplayValue(result);
+    updateDisplayValue(convertedResult);
   } else {
     showErrorFeedback();
   }
@@ -229,7 +230,8 @@ function formatExpression(expression) {
     .replace(/÷/g, "/")
     .replace(/×/g, "*")
     .replace(/,/g, ".")
-    .replace(/\b0+(\d+)/, "$1");
+    .replace(/\s/g, "")
+    .replace(/^0+(?=\d)/, "");
 }
 
 function replacePeriodToComma(value) {
@@ -239,7 +241,7 @@ function replacePeriodToComma(value) {
 function deleteCharacter() {
   const { start, end } = getSelection();
 
-    if (start === 0 && end === 0) return showErrorFeedback();
+  if (start === 0 && end === 0) return showErrorFeedback();
 
   const value = display.value;
 
@@ -249,13 +251,11 @@ function deleteCharacter() {
   updateCaretPosition(deleteStart);
 }
 
-
 function clearDisplay() {
   updateDisplayValue("");
 }
 
-// --- Funcionalidade de Erro já foi analisada
-const errorSound = new Audio("/assets/audio/error.mp3");
+const errorSound = new Audio("./assets/audio/error.mp3");
 const ERROR_DURATION = 500;
 
 let errorTimeout;
